@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactCotroller;
-use App\Http\Controllers\WeclomeCOntroller;
+use App\Http\Controllers\WeclomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,7 @@ Route::get('/' , [WeclomeCOntroller::class , 'index'])->name('welcome.index');
 //blog page
 Route::get('/blog' , [BlogController::class , 'index'])->name('blog.index');
 // Single blog post
-Route::get('/blog/single-blog-post' , [BlogController::class , 'show'])->name('single-blog.show');
+Route::get('/blog/{post:slug}' , [BlogController::class , 'show'])->name('single-blog.show');
 //contact page
 Route::get('/contact' , [ContactCotroller::class , 'index'])->name('contact.index');
 // create post

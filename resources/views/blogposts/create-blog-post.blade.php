@@ -6,7 +6,9 @@
 
         <!-- contact info -->
         <div class="container col-12">
-            
+            @if(session('status'))
+            <p style="color: white">{{session('status')}}</p>
+            @endif
 
           <!-- Contact Form -->
           <div class="contact-form">
