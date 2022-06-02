@@ -23,7 +23,15 @@
       @foreach($posts as $post)
       <section class="cards-blog latest-blog">
         <div class="card-blog-content">
-        <img src="{{$post->imagepath}}" alt="" />
+        <div class="post-button">
+            <a href="#">Edit</a>
+            <form action="" method="">
+              <div class="input"> 
+                <input type="submit"  value="delete">
+            </div>
+            </form>
+          </div>
+        <img src="{{url($post->imagepath)}}" alt="" />
           <p>{{$post->created_at->diffForHumans()}}         
             <span>Written By{{$post->user->name}}</span>
           </p>

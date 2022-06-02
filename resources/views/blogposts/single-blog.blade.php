@@ -51,9 +51,7 @@
       <section class="single-blog-post">
         <h1>Benefits of paul's photography</h1>
 
-        <p>{{$post->created_at->diffForHumans()}}         
-            <span>Written By{{$post->user->name}}</span>
-          </p>
+
 
         <div class="single-blog-post-ContentImage" data-aos="fade-left">
           <img src="{{asset($post->imagepath)}}" alt="" />

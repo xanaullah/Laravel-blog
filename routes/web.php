@@ -19,14 +19,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/' , [WeclomeCOntroller::class , 'index'])->name('welcome.index');
 //blog page
 Route::get('/blog' , [BlogController::class , 'index'])->name('blog.index');
-// Single blog post
-Route::get('/blog/{post:slug}' , [BlogController::class , 'show'])->name('single-blog.show');
-//contact page
-Route::get('/contact' , [ContactCotroller::class , 'index'])->name('contact.index');
 // create post
-Route::get('/blog/create' , [BlogController::class , 'create'])->name('blog.create');
+
+
+
+Route::get('/blog/create' , [BlogController::class , 'create'])->name('blog.create')->middleware('auth');
+// Single blog post
+Route::get('blog/{id} ' , [BlogController::class , 'edit'])->name('blog.edit');
+//update data
+Route::post('/blog/update' , [BlogController::class , 'store'])->name('blog.update');
+
+
+Route::get('/blog/{post:slug}', [BlogController::class , 'show'])->name('single-blog.show');
+//contact page 
+Route::get('/contact' , [ContactCotroller::class , 'index'])->name('contact.index');
+
 // Store posts
 Route::post('/blog/store' , [BlogController::class , 'store'])->name('blog.store');
+
+///delete  post
+route::post('blog{id}/delete' , [BlogController::class , 'delete'])->name('blog.delete');
+
+
+
 //About us page
 route::get('/baout' ,  function(){
    return view('about');
