@@ -25,7 +25,10 @@ Route::get('/blog' , [BlogController::class , 'index'])->name('blog.index');
 
 Route::get('/blog/create' , [BlogController::class , 'create'])->name('blog.create')->middleware('auth');
 // Single blog post
-Route::get('blog/{id} ' , [BlogController::class , 'edit'])->name('blog.edit');
+Route::get('blog/{id} ' , [BlogController::class , 'edit'])->name('b    ');
+//delete post
+Route::get('blog/{id} ' , [BlogController::class , 'delete'])->name('blog.delete');
+
 //update data
 Route::post('/blog/update' , [BlogController::class , 'store'])->name('blog.update');
 
